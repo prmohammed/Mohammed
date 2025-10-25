@@ -83,3 +83,70 @@
   <b>زوار الملف:</b><br />
   <img src="https://profile-counter.glitch.me/YOUR_USERNAME/count.svg" />
 </p>
+
+// 📂 Projects Rendering
+console.log("🛠️ FEATURED PROJECTS");
+console.log("=".repeat(50));
+
+projects.forEach(project => {
+  console.log(`
+📦 ${project.name}
+📝 ${project.description}
+🔧 ${project.tech.join(' • ')}
+⭐ ${project.features.join(' | ')}
+🔗 Demo: ${project.demo} | Code: ${project.code}
+  `);
+});
+
+// 🎨 Skills Visualization
+const skillLevels = [
+  { skill: "HTML5/CSS3", level: 95 },
+  { skill: "JavaScript", level: 90 },
+  { skill: "React.js", level: 85 },
+  { skill: "UI/UX Design", level: 80 },
+  { skill: "Responsive Design", level: 95 },
+  { skill: "Git & GitHub", level: 88 }
+];
+
+console.log("📊 TECHNICAL PROFICIENCY");
+console.log("=".repeat(50));
+
+skillLevels.forEach(({ skill, level }) => {
+  const bar = "█".repeat(level / 5) + "░".repeat(20 - level / 5);
+  console.log(`${skill.padEnd(20)} ${bar} ${level}%`);
+});
+// 📧 Contact Information
+const contact = {
+  email: "mohammed.alasmi@domain.com",
+  linkedin: "https://linkedin.com/in/mohammed-alasmi",
+  portfolio: "https://mohammed-alasmi.dev",
+  twitter: "https://twitter.com/mohammed_alasmi",
+  
+  // 🔔 Availability
+  availableFor: {
+    freelance: true,
+    collaboration: true,
+    mentorship: false,
+    hiring: "Open to opportunities"
+  },
+  
+  // 💬 Quick Response
+  responseTime: "Usually within 24 hours",
+  
+  // 📝 Contact Form
+  sendMessage: function(message) {
+    return `📨 Message received: "${message}" - I'll get back to you soon!`;
+  }
+};
+
+// 🎪 Contact Buttons (Visual)
+const contactButtons = `
+<div align="center">
+
+[![Email](https://img.shields.io/badge/📧_Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:${contact.email})
+[![LinkedIn](https://img.shields.io/badge/💼_LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](${contact.linkedin})
+[![Portfolio](https://img.shields.io/badge/🌐_Portfolio-000000?style=for-the-badge&logo=google-chrome&logoColor=white)](${contact.portfolio})
+[![Twitter](https://img.shields.io/badge/🐦_Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](${contact.twitter})
+
+</div>
+`;
